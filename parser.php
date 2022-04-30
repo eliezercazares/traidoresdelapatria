@@ -57,37 +57,37 @@ if ($handle) {
         );
         // estado
         $array_estados = array( 
-            1 => 'Aguascalientes'
-            2 => 'Baja California'
-            3 => 'Baja California Sur'
-            4 => 'Campeche'
-            5 => 'Chiapas'
-            6 => 'Chihuahua'
-            7 => 'Ciudad de México'
-            8 => 'Coahuila'
-            9 => 'Colima'
-            10 => 'Durango'
-            11 => 'Estado de México'
-            12 => 'Guanajuato'
-            13 => 'Guerrero'
-            14 => 'Hidalgo'
-            15 => 'Jalisco'
-            16 => 'Michoacán'
-            17 => 'Morelos'
-            18 => 'Nayarit'
-            19 => 'Nuevo León'
-            20 => 'Oaxaca'
-            21 => 'Puebla'
-            22 => 'Querétaro'
-            23 => 'Quintana Roo'
-            24 => 'San Luis Potosí'
-            25 => 'Sinaloa'
-            26 => 'Sonora'
-            27 => 'Tabasco'
-            28 => 'Tamaulipas'
-            29 => 'Tlaxcala'
-            30 => 'Veracruz'
-            31 => 'Yucatán'
+            1 => 'Aguascalientes',
+            2 => 'Baja California',
+            3 => 'Baja California Sur',
+            4 => 'Campeche',
+            5 => 'Chiapas',
+            6 => 'Chihuahua',
+            7 => 'Ciudad de México',
+            8 => 'Coahuila',
+            9 => 'Colima',
+            10 => 'Durango',
+            11 => 'Estado de México',
+            12 => 'Guanajuato',
+            13 => 'Guerrero',
+            14 => 'Hidalgo',
+            15 => 'Jalisco',
+            16 => 'Michoacán',
+            17 => 'Morelos',
+            18 => 'Nayarit',
+            19 => 'Nuevo León',
+            20 => 'Oaxaca',
+            21 => 'Puebla',
+            22 => 'Querétaro',
+            23 => 'Quintana Roo',
+            24 => 'San Luis Potosí',
+            25 => 'Sinaloa',
+            26 => 'Sonora',
+            27 => 'Tabasco',
+            28 => 'Tamaulipas',
+            29 => 'Tlaxcala',
+            30 => 'Veracruz',
+            31 => 'Yucatán',
             32 => 'Zacatecas'
         );
 
@@ -100,11 +100,11 @@ if ($handle) {
         $imagen = str_replace("http://sitl.diputados.gob.mx/LXV_leg/fotos_lxvconfondo/", "", $columns[6]);
 
         // cambiamos los ids por los nombres de partido y estado
-        $partido = $array_partidos[$partido];
-        $estado = $array_estados[$estado];
+        $partido_string = $array_partidos[$partido];
+        $estado_string = $array_estados[$estado];
 
         // crear el registro en la tabla con una referencia al filename de las fotos descargadas
-        $query = "INSERT INTO traidores VALUES ('" . $nombre . "', '" . $partido . "', '" . $imagen . "', '" . $link . "', '" . $periodo . "', '" . $estado . "', '" . $distrito . "', '" . $dob . "')";
+        $query = "INSERT INTO traidores VALUES ('" . $nombre . "', '" . $partido_string . "', '" . $imagen . "', '" . $link . "', '" . $periodo . "', '" . $estado_string . "', '" . $distrito . "', '" . $dob . "')";
         $mysqli->query($query) OR die($mysqli->connect_error . "<br>" . $query);
     }
     fclose($handle);
